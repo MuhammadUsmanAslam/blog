@@ -2,12 +2,16 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const morgan = require("morgan");
+const connectDB = require("./config/db");
 
 // env config
 dotenv.config();
 
 // Rest Object
 const app = express();
+
+// DB Connect
+connectDB();
 
 // Middlewares
 app.use(cors());
